@@ -9,7 +9,11 @@ export class StarshipModel{
         return allStarships
     }
     static async getById({ id }){
-        return {id}
+        let result = []
+        if(id){
+            result = allStarships.filter(starship => starship.id == id)
+        } 
+        return result.length > 0 ? result : {error: 'Dato no encontrado'};
     }
 }
 

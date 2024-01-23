@@ -9,7 +9,11 @@ export class PlanetModel{
         return allPlanets
     }
     static async getById({id}){
-        return {id}
+        let result = []
+        if(id){
+            result = allPlanets.filter(planet => planet.id == id)
+        } 
+        return result.length > 0 ? result : {error: 'Dato no encontrado'};
     }
 }
 

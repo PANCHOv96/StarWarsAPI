@@ -8,7 +8,7 @@ export class StarshipsController{
     }
     static async getById(req,res){
         const { id } = req.params
-        const result = await 
+        const result = await StarshipModel.getById({ id })
         res.json(result)
     }
 }

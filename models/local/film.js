@@ -9,10 +9,11 @@ export class FilmModel{
         return allFilms
     }
     static async getByid({id}){
+        let result = []
         if(id){
-            return allFilms.filter( film => film.id == id)
-        }
-        return { error: 'Elemento No encontrado'};
+            result = allFilms.filter(film => film.id == id)
+        } 
+        return result.length > 0 ? result : {error: 'Dato no encontrado'};
     }
 }
 

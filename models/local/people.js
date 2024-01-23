@@ -9,10 +9,11 @@ export class PeopleModel{
         return allPeople;
     }
     static async getById({id}){
-        if (id) return allPeople.filter(
-            people => people.id == id
-        )
-        return { error: 'Elemento No encontrado'};
+        let result = []
+        if(id){
+            result = allPeople.filter(people => people.id == id)
+        } 
+        return result.length > 0 ? result : {error: 'Dato no encontrado'};
     }
 }
 

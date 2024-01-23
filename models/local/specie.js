@@ -9,7 +9,11 @@ export class SpecieModel{
         return allSpecies
      }
      static async getById({id}){
-         return {id}
+        let result = []
+        if(id){
+            result = allSpecies.filter(specie => specie.id == id)
+        } 
+        return result.length > 0 ? result : {error: 'Dato no encontrado'};
      }
 }
 
