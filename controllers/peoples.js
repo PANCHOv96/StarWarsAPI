@@ -1,15 +1,16 @@
-// import { PeopleModel } from "../models/local/people.js"
-import { PeopleModel } from "../models/MySql/people.js"
 
 export class PeoplesController {
-    static async getAll(req,res) {
+    constructor({ PeopleModel }){
+        this.model = PeopleModel
+    }
+    getAll = async (req,res)=> {
         const props = req.query
-        const response = await PeopleModel.getAll(props)
+        const response = await this.model.getAll(props)
         res.json(response)
     }
-    static async getById(req,res){
+    getById = async (req,res)=>{
         const { id } = req.params
-        const response = await PeopleModel.getById({id})
+        const response = await this.model.getById({id})
         res.json(response)
     }
 }

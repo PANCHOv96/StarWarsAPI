@@ -1,15 +1,16 @@
-// import { VehicleModel } from '../models/local/vehicle.js'
-import { VehicleModel } from '../models/MySql/vehicle.js'
 
 export class VehiclesController{
-    static async getAll(req,res){
+    constructor({ VehicleModel }){
+        this.model = VehicleModel
+    }
+    getAll = async (req,res) => {
         const props = req.query;
-        const result = await VehicleModel.getAll(props)
+        const result = await this.model.getAll(props)
         res.json(result)
     }
-    static async getById(req,res){
+    getById = async (req,res) => {
         const { id } = req.params;
-        const result = await VehicleModel.getById({id})
+        const result = await this.model.getById({id})
         res.json(result)
     }
 }

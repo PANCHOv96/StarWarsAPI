@@ -1,15 +1,16 @@
-// import { SpecieModel } from '../models/local/specie.js'
-import { SpecieModel } from '../models/MySql/specie.js'
 
 export class SpeciesController{
-    static async getAll(req,res){
+    constructor({ SpecieModel }){
+        this.model = SpecieModel
+    }
+    getAll = async (req,res) => {
         const props = req.query
-        const result = await SpecieModel.getAll(props);
+        const result = await this.model.getAll(props);
         res.json(result)
     }
-    static async getbyId(req,res){
+    getbyId = async (req,res) => {
         const { id } = req.params
-        const result = await SpecieModel.getById({id});
+        const result = await this.model.getById({id});
         res.json(result)
     }
 }

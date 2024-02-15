@@ -1,15 +1,16 @@
-// import { StarshipModel } from "../models/local/starship.js"
-import { StarshipModel } from "../models/MySql/starship.js"
 
 export class StarshipsController{
-    static async getAll(req,res){
+    constructor({ StarshipModel }){
+        this.model = StarshipModel
+    }
+    getAll = async (req,res) => {
         const props = req.query
-        const result = await StarshipModel.getAll(props)
+        const result = await this.model.getAll(props)
         res.json(result)
     }
-    static async getById(req,res){
+    getById = async (req,res) => {
         const { id } = req.params
-        const result = await StarshipModel.getById({ id })
+        const result = await this.model.getById({ id })
         res.json(result)
     }
 }
