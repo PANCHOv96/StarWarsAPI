@@ -22,6 +22,6 @@ async function buscarDatos({url},arreglo=[]){
 }
   
 // Se pasa la URL de la api y se obtienen todos los datos , se guarda en un archivo json para despues  modificarlo
-const result = await buscarDatos({url:ENUM_DATA.vechicles})
+const result = await buscarDatos({url:ENUM_DATA.characters})
 console.log('Termino de buscar')
 fs.writeFileSync("datosBuscados.json", JSON.stringify(result));
