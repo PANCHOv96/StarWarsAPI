@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "prod": "node app.js",
-    "start": "node --watch app.js",
+    "start-local": "node --watch local.js",
+    "start-mysql": "node --watch mysql.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
