@@ -1,7 +1,13 @@
 import { Router } from 'express'
 import { PlanetsController } from '../controllers/planets.js'
 
-export const planetsRoutes = Router()
+export function createPlanetsRoutes({ PlanetModel }){
+    const planetsRoutes = Router()
+    
+    const planetController = new PlanetsController({ PlanetModel })
+    
+    planetsRoutes.get('/', planetController.getAll)
+    planetsRoutes.get('/:id', planetController.getById)
 
-planetsRoutes.get('/', PlanetsController.getAll)
-planetsRoutes.get('/:id', PlanetsController.getById)
+    return planetsRoutes
+}

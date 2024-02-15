@@ -1,7 +1,13 @@
 import { Router } from "express";
 import { StarshipsController } from "../controllers/starships.js";
 
-export const starshipsRoutes = Router()
+export function createStarshipRoutes({ StarshipModel }){
+    const starshipsRoutes = Router()
+    
+    const strarshipsController = new StarshipsController({ StarshipModel })
 
-starshipsRoutes.get('/' , StarshipsController.getAll)
-starshipsRoutes.get('/:id' , StarshipsController.getById)
+    starshipsRoutes.get('/' , strarshipsController.getAll)
+    starshipsRoutes.get('/:id' , strarshipsController.getById)
+
+    return starshipsRoutes
+}
