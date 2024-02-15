@@ -1,5 +1,5 @@
 import { allStarships } from '../../mocks/with-results-starships.js'
-import { includesString } from '../../utils/utils.js'
+import { includesString } from './utils/utils.js'
 
 export class StarshipModel{
     static async getAll({ name }){

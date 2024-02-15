@@ -1,5 +1,5 @@
 import { allFilms } from '../../mocks/with-results-films.js'
-import { includesString } from '../../utils/utils.js'
+import { includesString } from './utils/utils.js'
 
 export class FilmModel{
     static async getAll({ title, director, producer, year}){

@@ -1,5 +1,5 @@
 import { allVehicles } from '../../mocks/with-results-vehicles.js'
-import { includesString } from '../../utils/utils.js'
+import { includesString } from './utils/utils.js'
 
 export class VehicleModel{
     static async getAll({ name, vehicles_class, passengers}){

@@ -1,5 +1,5 @@
 import { allSpecies } from '../../mocks/with-results-species.js'
-import { includesString } from '../../utils/utils.js'
+import { includesString } from './utils/utils.js'
 
 export class SpecieModel{
      static async getAll({ name, language, designation }){

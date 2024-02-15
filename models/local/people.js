@@ -1,9 +1,9 @@
 import { allPeople } from '../../mocks/with-results-characters.js'
-import { includesString } from '../../utils/utils.js'
+import { includesString } from './utils/utils.js'
 
 export class PeopleModel{
     static async getAll({ name, gender }){
-        if (name || gender || species) return allPeople.filter(
+        if (name || gender ) return allPeople.filter(
             people => filterPeoples(people,{name, gender })
         )
         return allPeople;

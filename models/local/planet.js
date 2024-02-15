@@ -1,5 +1,5 @@
 import { allPlanets } from '../../mocks/with-results-planets.js'
-import { includesString } from '../../utils/utils.js'
+import { includesString } from './utils/utils.js'
 
 export class PlanetModel{
     static async getAll({ name, climate, terrain }){
