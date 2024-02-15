@@ -1,4 +1,5 @@
-import { PlanetModel } from '../models/local/planets.js'
+// import { PlanetModel } from '../models/local/planet.js'
+import { PlanetModel } from '../models/MySql/planet.js'
 
 export class PlanetsController{
     static async getAll(req,res){

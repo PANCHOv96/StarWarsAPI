@@ -1,4 +1,5 @@
-import { StarshipModel } from "../models/local/starship.js"
+// import { StarshipModel } from "../models/local/starship.js"
+import { StarshipModel } from "../models/MySql/starship.js"
 
 export class StarshipsController{
     static async getAll(req,res){

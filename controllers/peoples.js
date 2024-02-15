@@ -1,4 +1,5 @@
-import { PeopleModel } from "../models/local/people.js"
+// import { PeopleModel } from "../models/local/people.js"
+import { PeopleModel } from "../models/MySql/people.js"
 
 export class PeoplesController {
     static async getAll(req,res) {

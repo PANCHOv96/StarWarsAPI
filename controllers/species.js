@@ -1,4 +1,5 @@
-import { SpecieModel } from '../models/local/specie.js'
+// import { SpecieModel } from '../models/local/specie.js'
+import { SpecieModel } from '../models/MySql/specie.js'
 
 export class SpeciesController{
     static async getAll(req,res){

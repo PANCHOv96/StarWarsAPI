@@ -1,4 +1,5 @@
-import { VehicleModel } from '../models/local/vehicle.js'
+// import { VehicleModel } from '../models/local/vehicle.js'
+import { VehicleModel } from '../models/MySql/vehicle.js'
 
 export class VehiclesController{
     static async getAll(req,res){
