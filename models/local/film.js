@@ -21,7 +21,7 @@ export class FilmModel{
 function filterFilms(obj,{title,director,producer,year}){
     // todos los string son correctos o en dicho caso no existe una variable a comparar retorna TRUE
     if(includesString(obj.title,title) && includesString(obj.director, director) 
-    && includesString(obj.producer, producer) && includesString(obj.year,year)){
+    && includesString(obj.producer, producer) && includesString(obj.release_date,year)){
         return true
     }
     return false
